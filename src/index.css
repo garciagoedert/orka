@@ -1,3 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply text-[#0f1e35] bg-white antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(160deg, #0b1a2e 0%, #112244 40%, #1a3060 70%, #0f2a50 100%);
+  }
+
+  .hero-lines {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 60%, transparent 100%);
+  }
+
+  .section-blue {
+    background-color: #dde8f4;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center gap-2 bg-[#0f1e35] text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-[#1a3060] transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-[#0f1e35] text-[#0f1e35] text-sm font-medium px-6 py-3 rounded-full hover:bg-[#0f1e35] hover:text-white transition-all duration-200;
+  }
+
+  .stat-number {
+    font-family: 'DM Serif Display', Georgia, serif;
+    @apply text-6xl md:text-7xl text-[#0f1e35] leading-none;
+  }
+
+  .stat-unit {
+    @apply text-2xl font-bold text-[#0f1e35] ml-1;
+  }
+
+  .split-section-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+}
